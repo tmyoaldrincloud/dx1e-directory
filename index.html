@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DX1E DIRECTORY</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#94a3b8;--glass:rgba(255,255,255,0.03)}
+    *{box-sizing:border-box;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial}
+    body{margin:0;background:linear-gradient(180deg,#071029 0%, #0b1724 100%);color:#e6eef6;padding:28px}
+    .wrap{max-width:1100px;margin:0 auto}
+    header{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+    h1{font-size:20px;margin:0}
+    p.lead{margin:0;color:var(--muted);font-size:13px}
+    .searchbar{display:flex;gap:8px;margin:14px 0}
+    .searchbar input{flex:1;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:var(--glass);color:inherit;font-size:15px}
+    .searchbar button{padding:10px 12px;border-radius:10px;border:0;background:var(--accent);color:#042027;font-weight:600;cursor:pointer}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border-radius:12px;padding:12px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    thead th{position:sticky;top:0;background:rgba(0,0,0,0.35);backdrop-filter:blur(6px);padding:10px;text-align:left;font-size:13px;color:var(--muted)}
+    tbody tr{transition:background .12s}
+    tbody tr:nth-child(even){background:rgba(255,255,255,0.01)}
+    td{padding:10px;border-top:1px solid rgba(255,255,255,0.02)}
+    tbody tr.hidden{display:none}
+    mark{background:yellow;color:#042027;padding:0 2px;border-radius:2px}
+    .meta{font-size:12px;color:var(--muted);margin-top:8px}
+    @media (max-width:720px){thead th:nth-child(2), td:nth-child(2){display:none} /* hide name column on tiny screens */}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>DX1E ELITE HAMSTER CLUB — DIRECTORY</h1>
+        <p class="lead">Search by callsign, name, or location. Use commas to enter multiple search terms.</p>
+      </div>
+    </header>
+
+    <div class="searchbar">
+      <input id="search" placeholder="Type to search (e.g. 4H1VCR, Aldrin, Cabuyao)" aria-label="Search table" />
+      <button id="clear">Clear</button>
+    </div>
+
+    <div class="card">
+      <div style="overflow:auto;max-height:68vh;padding-right:8px">
+        <table id="callsTable">
+          <thead>
+            <tr>
+              <th>CALLSIGN</th>
+              <th>NAME</th>
+              <th>LOCATION</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Rows generated from provided list -->
+            <tr><td>4F1PUZ</td><td>OYO</td><td>SAN PABLO CITY</td></tr>
+            <tr><td>4F1AHL</td><td>DENNIS</td><td>SARIAYA QUEZON</td></tr>
+            <tr><td>4G1LNQ</td><td>MEJIE</td><td>GUMACA QUEZON</td></tr>
+            <tr><td>4G1SKJ</td><td>VERNON</td><td>GMA CAVITE</td></tr>
+            <tr><td>4H1FWL</td><td>ALVIN</td><td>SAN PABLO CITY</td></tr>
+            <tr><td>DW1UDV</td><td>DICK</td><td>CALAMBA CITY</td></tr>
+            <tr><td>4H1UDF</td><td>CHARLIE</td><td>SAN PABLO CITY</td></tr>
+            <tr><td>4G1LOB</td><td>RENE</td><td>SAN PABLO CITY</td></tr>
+            <tr><td>4G1YYD</td><td>SONNY</td><td>TIAONG QUEZON</td></tr>
+            <tr><td>4H1FUD</td><td>DENNIS</td><td>ROSARIO BATANGAS</td></tr>
+            <tr><td>4H1NWR</td><td>RONALD</td><td>PADRE GARCIA</td></tr>
+            <tr><td>4H1VCR</td><td>ALDRIN</td><td>CABUYAO LAGUNA</td></tr>
+            <tr><td>4H1GRY</td><td>JOEL</td><td>ALABANG MUNTINLUPA</td></tr>
+            <tr><td>4G1VII</td><td>EDWIN</td><td>BINAN CITY</td></tr>
+            <tr><td>DU1MT</td><td>MER</td><td>SAN PABLO CITY</td></tr>
+            <tr><td>4H1VCS</td><td>JAY</td><td>STA ROSA LAGUNA</td></tr>
+            <tr><td>DV1WW</td><td>VIC</td><td>SAN PEDRO LAGUNA</td></tr>
+            <tr><td>4H1VCU</td><td>JONATHAN</td><td>LUCENA CITY</td></tr>
+            <tr><td>4H1WVW</td><td>NOLY</td><td>STA. ROSA LAGUNA</td></tr>
+            <tr><td>4G1LAE</td><td>DAN</td><td>DOLORES QUEZON</td></tr>
+            <tr><td>DY1XSS</td><td>LODI</td><td>CABUYAO LAGUNA</td></tr>
+            <tr><td>DV1XRY</td><td>JERRY</td><td>CABUYAO LAGUNA</td></tr>
+            <tr><td>DW1VHA</td><td>LORIE</td><td>CABUYAO LAGUNA</td></tr>
+            <tr><td>4G1UAE</td><td>DARWIN</td><td>CALAPAN MINDORO</td></tr>
+            <tr><td>4H1YMQ</td><td>ARNOLD</td><td>SAN PABLO CITY</td></tr>
+            <tr><td>DV1YUD</td><td>DANTE</td><td>STO. TOMAS BATANGAS</td></tr>
+            <tr><td>4H1UBN</td><td>MERGE</td><td>NAUJAN OR MINDORO</td></tr>
+            <tr><td>4G1TZQ</td><td>GLENN</td><td>BACO OR MINDORO</td></tr>
+            <tr><td>4G1NXU</td><td>RODEL</td><td>CALAMBA CITY</td></tr>
+            <tr><td>4G1URH</td><td>RAYVEN</td><td>STA. ROSA LAGUNA</td></tr>
+            <tr><td>4H1URG</td><td>MARY ANN</td><td>STA. ROSA LAGUNA</td></tr>
+            <tr><td>DV1NOL</td><td>LOUIE</td><td>STA. ROSA LAGUNA</td></tr>
+            <tr><td>4H1XCF</td><td>CECIL</td><td>STA. ROSA LAGUNA</td></tr>
+            <tr><td>4I1PSO</td><td>VIC</td><td>STA. ROSA LAGUNA</td></tr>
+            <tr><td>4H1LCJ</td><td>ALVIN</td><td>SILANG CAVITE</td></tr>
+            <tr><td>DW1KUQ</td><td>GREENE</td><td>LUCENA CITY</td></tr>
+            <tr><td>4I1LAB</td><td>JESS</td><td>NAGCARLAN LAGUNA</td></tr>
+            <tr><td>4G1GHB</td><td>RUDY</td><td>STA. ROSA LAGUNA</td></tr>
+            <tr><td>4I1LNP</td><td>MARVIN</td><td>LUCENA CITY</td></tr>
+            <tr><td>4G1LHN</td><td>BRIAN</td><td>NAGCARLAN LAGUNA</td></tr>
+            <tr><td>DV1MTW</td><td>ELI</td><td>CABUYAO LAGUNA</td></tr>
+            <tr><td>4H1USR</td><td>WENCY</td><td>NAGCARLAN LAGUNA</td></tr>
+            <tr><td>4G1YMP</td><td>SONNY</td><td>SAN PABLO CITY</td></tr>
+            <tr><td>4I1LCO</td><td>MAXXIS</td><td>LUCBAN QUEZON</td></tr>
+            <tr><td>4H1NWQ</td><td>ERIC</td><td>LEMERY BATANGAS</td></tr>
+            <tr><td>DW1SIQ</td><td>JULIUS</td><td>CALAMBA CITY</td></tr>
+            <tr><td>4G1LCN</td><td>EMIL</td><td>PAKIL LAGUNA</td></tr>
+            <tr><td>4F1TUB</td><td>ROMMEL</td><td>BACO OR MINDORO</td></tr>
+            <tr><td>4H1XDW</td><td>FRANS</td><td>SARIAYA QUEZON</td></tr>
+            <tr><td>4G1YOR</td><td>ESMEI</td><td>CABUYAO LAGUNA</td></tr>
+            <tr><td>4G1MZA</td><td>RICHARD</td><td>MINDORO</td></tr>
+            <tr><td>DU1ZUP</td><td>JOEY</td><td>CABUYAO LAGUNA</td></tr>
+            <tr><td>4I1QBY</td><td>BOYET</td><td>CABUYAO LAGUNA</td></tr>
+            <tr><td>4G1NWU</td><td>RONNEL</td><td>LUCENA CITY</td></tr>
+            <tr><td>DW1UUK</td><td>ARNOLD</td><td>SARIAYA QUEZON</td></tr>
+            <tr><td>4H1LNR</td><td>EDGAR</td><td>LUCENA CITY</td></tr>
+            <tr><td>DW1QFS</td><td>RICHARD</td><td>LUCENA CITY</td></tr>
+            <tr><td>4H1URI</td><td>JON</td><td>STA. ROSA LAGUNA</td></tr>
+            <tr><td>DV1HPR</td><td>HYPER</td><td>PARANAQUE CITY</td></tr>
+            <tr><td>4G1LOD</td><td>PAT</td><td>LIPA CITY</td></tr>
+            <tr><td>4H1LOA</td><td>BABY</td><td>SAN PABLO CITY</td></tr>
+            <tr><td>4G1QBT</td><td>CLOUD</td><td>LUCENA/MABINI</td></tr>
+            <tr><td>4H1QGO</td><td>LANIE</td><td>MABINI BATANGAS</td></tr>
+            <tr><td>4G1LCQ</td><td>ROMY</td><td>SAN ANTONIO QUEZON</td></tr>
+            <tr><td>4G1LFM</td><td>LOLOBOY</td><td>SAN PABLO CITY</td></tr>
+            <tr><td>4G1MVJ</td><td>RENE</td><td>SAN PABLO CITY</td></tr>
+            <tr><td>4G1MYH</td><td>DARWIN</td><td>FRANCE/LOBO BATANGAS</td></tr>
+            <tr><td>4G1VHB</td><td>NESTOR</td><td>NAIC CAVITE</td></tr>
+            <tr><td>4G1YYE</td><td>ED</td><td>TIAONG QUEZON</td></tr>
+            <tr><td>4H1BIO</td><td>DANIEL</td><td>PARANAQUE CITY</td></tr>
+            <tr><td>4H1FQV</td><td>JERRY</td><td>LOS BANOS</td></tr>
+            <tr><td>4H1LNY</td><td>JULS</td><td>SAN PABLO CITY</td></tr>
+            <tr><td>4H1QKZ</td><td>LANZ</td><td>LOS BANOS LAGUNA</td></tr>
+            <tr><td>4I1BIQ</td><td>MANNY</td><td>PARANAQUE CITY</td></tr>
+            <tr><td>AA6AD</td><td>ANTHONY</td><td>CALIFORNIA</td></tr>
+            <tr><td>DW1EYD</td><td>DOC GLENN</td><td>LUCENA CITY</td></tr>
+            <tr><td>DW1PVH</td><td>ERIC</td><td>CABUYAO LAGUNA</td></tr>
+            <tr><td>DY1WOT</td><td>ALBERT</td><td>SAN PABLO CITY</td></tr>
+            <tr><td>4G1YMR</td><td>ARIEL</td><td>SAN PABLO CITY</td></tr>
+            <tr><td>4H1UCA</td><td>JUN</td><td>BATANGAS CITY</td></tr>
+            <tr><td>4H1UDE</td><td>ANTHONY</td><td>STA. ROSA LAGUNA</td></tr>
+            <tr><td>4H1VCT</td><td>JOSIE</td><td>STA. ROSA LAGUNA</td></tr>
+            <tr><td>4H1RZM</td><td>GUILLER</td><td>MABINI BATANGAS</td></tr>
+            <tr><td>4H1LNZ</td><td>MIKE</td><td>SAN PABLO CITY</td></tr>
+            <tr><td>KO6COF</td><td>KYLE</td><td>SAN PABLO CITY</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="meta">Tip: Type any part of callsign, name, or location. Use commas to search multiple terms (matches if any term is found).</div>
+    </div>
+  </div>
+
+  <script>
+    const input = document.getElementById('search');
+    const clearBtn = document.getElementById('clear');
+    const table = document.getElementById('callsTable');
+    const tbody = table.tBodies[0];
+    const rows = Array.from(tbody.rows);
+
+    function escapeRegExp(string) {
+      return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    function highlightCell(cell, terms){
+      let text = cell.textContent;
+      if(!terms.length) { cell.innerHTML = text; return; }
+      // replace matches with <mark>
+      let html = text;
+      terms.forEach(t => {
+        if(!t) return;
+        const rx = new RegExp(escapeRegExp(t), 'gi');
+        html = html.replace(rx, match => `<mark>${match}</mark>`);
+      });
+      cell.innerHTML = html;
+    }
+
+    function filterTable() {
+      const raw = input.value.trim();
+      // split on commas but keep exact pieces; empty pieces ignored
+      const terms = raw.split(',').map(s => s.trim()).filter(Boolean).map(s => s.toLowerCase());
+
+      rows.forEach(row => {
+        // combine searchable text
+        const rowText = Array.from(row.cells).map(c => c.textContent.toLowerCase()).join(' | ');
+        if(!terms.length) {
+          row.classList.remove('hidden');
+          // remove previous highlights
+          Array.from(row.cells).forEach(c => c.innerHTML = c.textContent);
+          return;
+        }
+
+        // Match if ANY search term appears in the row (OR logic)
+        const matches = terms.some(t => rowText.indexOf(t) !== -1);
+        if(matches){
+          row.classList.remove('hidden');
+          // highlight matches per cell
+          Array.from(row.cells).forEach(c => highlightCell(c, terms));
+        } else {
+          row.classList.add('hidden');
+        }
+      });
+    }
+
+    input.addEventListener('input', filterTable);
+    clearBtn.addEventListener('click', ()=>{ input.value=''; input.focus(); filterTable(); });
+
+    // Optional: focus the input on load
+    input.focus();
+  </script>
+</body>
+</html>
